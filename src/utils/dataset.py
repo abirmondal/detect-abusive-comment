@@ -1,9 +1,6 @@
 import os
-from dotenv import load_dotenv
 import pandas as pd
 from pandas.core.frame import DataFrame
-
-load_dotenv()
 
 dataset_folder = '../../src/data/'
 dataset_name = 'm_dataset_21_9'
