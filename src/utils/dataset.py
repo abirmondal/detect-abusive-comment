@@ -34,9 +34,9 @@ val_set = pd.read_csv(
     ).replace('\\', '/')
 )
 
-def get_dataset(val=True) -> (tuple[DataFrame, DataFrame] | tuple[DataFrame, DataFrame, DataFrame]):
+def get_full_dataset(val=True) -> (tuple[DataFrame, DataFrame] | tuple[DataFrame, DataFrame, DataFrame]):
     '''
-    Get the dataset from the dataset folder.
+    Get the full dataset from the dataset folder.
 
     Args:
     * val(bool): If True, returns the validation set also.
@@ -50,6 +50,18 @@ def get_dataset(val=True) -> (tuple[DataFrame, DataFrame] | tuple[DataFrame, Dat
         return train_set, test_set
     else:
         return train_set, test_set, val_set
+
+def get_test_set() -> DataFrame:
+    '''
+    Get the test set from the dataset folder.
+
+    Args:
+    None
+
+    Returns:
+    * test_set: Testing set
+    '''
+    return test_set
 
 def get_dataset_details() -> None:
     '''
