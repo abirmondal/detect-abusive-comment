@@ -2,7 +2,7 @@ import os
 import pandas as pd
 from pandas.core.frame import DataFrame
 
-dataset_folder = '../../src/data/'
+dataset_folder = '../../data/'
 dataset_name = 'm_dataset_21_9'
 dataset_division_folder = 'dataset_12_10'
 

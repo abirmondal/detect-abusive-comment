@@ -1,4 +1,0 @@
-     Total Data Count: 90345
-     Train Data Count: 63241 (70.00%)
-      Test Data Count: 18069 (20.00%)
-Validation Data Count:  9035 (10.00%)
