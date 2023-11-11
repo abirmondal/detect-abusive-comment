@@ -5,9 +5,9 @@ from pandas.core.frame import DataFrame
 
 load_dotenv()
 
-dataset_folder = os.getenv('DATASET_FOLDER')
-dataset_name = os.getenv('DATASET_NAME')
-dataset_division_folder = os.getenv('DATASET_DIVISION_FOLDER')
+dataset_folder = '../../src/data/'
+dataset_name = 'm_dataset_21_9'
+dataset_division_folder = 'dataset_12_10'
 
 train_set = pd.read_csv(
     './'+
