@@ -10,25 +10,25 @@ We have merged three datasets to create a new dataset. The datasets are:
 * [Bangla-Abusive-Comment-Dataset](https://github.com/aimansnigdha/Bangla-Abusive-Comment-Dataset)
 * [Multi_labeled_toxic_comments](https://github.com/deepu099cse/Multi-Labeled-Bengali-Toxic-Comments-Classification)
 
-The merged dataset is available in the [```data```](https://github.com/abirmondal/detect-abusive-comment/blob/main/data) folder. The latest merge is present in the folder ```m_dataset_21_9```.
+The merged dataset is available in the [*data*](https://github.com/abirmondal/detect-abusive-comment/blob/main/data) folder. The latest merge is present in the folder *m_dataset_21_9*.
 
 # Preprocessing
 
 We have used the following preprocessing steps:
-* Remove punctuations
-* Replace English words with Bengali words
-* Remove numbers
-* Remove special charaters such as HTML tags
-* Remove emojis
-* Remove URLs
-* Remove extra spaces
+* Remove comments with stars ```*```, i.e. comments that are censored
+* Remove special words, such as HTML tags
+* Remove Links and Emojis using [normalizer](https://github.com/csebuetnlp/normalizer)
+* Remove single letter words
+* Translate English words to Bengali using Google Translator with the help of the library [translators](https://pypi.org/project/translators/)
+* Strip Comments to remove extra space
 
 # Dataset Division
 
 We have divided the dataset into three parts:
-* Train: 70%
-* Validation: 10%
-* Test: 20%
+| Train Set | Test Set | Validation Set |
+| :-: | :-: | :-: |
+| 63241 (70%) | 18069 (20%) | 9035 (10%) |
+
 We have used sklearn's ```train_test_split``` function to divide the dataset.
 
 # Models
@@ -45,18 +45,18 @@ The deep learning model is made using [BanglaBERT](https://github.com/csebuetnlp
 # Results
 
 | Model | Accuracy | Weighted Average Precision | Weighted Average Recall | Weighted Average F1-Score |
-| --- | --- | --- | --- | --- |
+| --- | :-: | :-: | :-: | :-: |
 | BanglaBERT + LSTM | 76.89 | 76.76 | 71.07 | 73.81 |
 | Random Forest | 77.65 | 75.16 | 70.66 | 72.84 |
 | Support Vector Machine | 72.47 | 73.39 | 55.03 | 62.89 |
 | Logistic Regression | 72.37 | 72.20 | 56.67 | 63.50 |
 | Naive Bayes | 71.64 | 74.87 | 49.88 | 59.87 |
 
-We have achieved almost the best accuracy using BanglaBERT + LSTM model. As we wanted to focus on detecting abusive comments, we have focused on the recall and f1-score which is better than the other models.
+We have achieved almost the best accuracy using **BanglaBERT + LSTM** model. As we wanted to focus on detecting abusive comments, we have focused on the *recall* and *f1-score* which is better than the other models.
 
 # Testing
 
-* To test BanglaBERT + LSTM model on the ```test set``` execute all the cells of the notebook [```banglabert_test_17_11_abir_.ipynb```](https://github.com/abirmondal/detect-abusive-comment/blob/e46dcd6c4bac364ea340f84ab8cff9d1f7880529/test/banglabert_test_17_11_abir_.ipynb) in the ```test``` folder.
-* To test the baseline models on the ```test set``` execute all the cells of the notebook [```loaded_baselines__17_11_kingshuk.ipynb```](https://github.com/abirmondal/detect-abusive-comment/blob/a4e9c7b481cccaacf1fac369324befd6e33ac07e/test/loaded_baselines__17_11_kingshuk.ipynb) in the ```test``` folder.
+* To test BanglaBERT + LSTM model on the *testing set* execute all the cells of the notebook [*banglabert_test_17_11_abir_.ipynb*](https://github.com/abirmondal/detect-abusive-comment/blob/e46dcd6c4bac364ea340f84ab8cff9d1f7880529/test/banglabert_test_17_11_abir_.ipynb) in the [*test*](https://github.com/abirmondal/detect-abusive-comment/blob/6fa8e139f8867cb9717b5113bf4c53127e732cc1/test) folder.
+* To test the baseline models on the *testing set* execute all the cells of the notebook [*loaded_baselines__19_11_kingshuk.ipynb*](https://github.com/abirmondal/detect-abusive-comment/blob/6fa8e139f8867cb9717b5113bf4c53127e732cc1/test/loaded_baselines__19_11_kingshuk.ipynb) in the [*test*](https://github.com/abirmondal/detect-abusive-comment/blob/6fa8e139f8867cb9717b5113bf4c53127e732cc1/test) folder.
 
-> Note: The models are already trained and saved in the ```models``` folder. You can also run the notebooks in [Google Colab](https://colab.research.google.com/).
+> Note: The models are already trained and saved in the [*models*](https://github.com/abirmondal/detect-abusive-comment/blob/9b95e5b7b5cb38424ee00b2b843bcc2d9cd82f4d/src/models) folder. You can also run the notebooks in [Google Colab](https://colab.research.google.com/).
