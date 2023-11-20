@@ -1,8 +1,8 @@
 # detect-abusive-comment
 
-This academic work explores the problem of detecting toxic comments in Bengali social media text, which is unstructured and inflectional. Manual filtering is hard and inefficient, so we use deep learning models that can extract features automatically. We compare them with statistical models that need feature engineering and show that deep learning models perform better, as in English text analysis.
+This academic work explores the problem of detecting toxic comments in Bengali social media text, which is unstructured and inflectional. Manual filtering is hard and inefficient, so we use deep learning models to extract features automatically. We compare them with statistical models that need feature engineering and show that deep learning models perform better, as in English text analysis.
 
-We study the problem of detecting toxic comments in Bengali social media text, which is unstructured and has misspelled vulgar words. We use machine learning models that can classify such comments automatically. We compare four supervised models with our [BanglaBERT](https://github.com/csebuetnlp/banglabert) and LSTM models, which is better than statistical models for Bengali text.
+We study the problem of detecting toxic comments in Bengali social media text, which is unstructured and has misspelled vulgar words. We use machine learning models that can classify such comments automatically. We compare four supervised models with our [BanglaBERT](https://github.com/csebuetnlp/banglabert) and LSTM models, which are better than statistical models for Bengali text.
 
 # Dataset
 We have merged three datasets to create a new dataset. The datasets are:
@@ -15,12 +15,12 @@ The merged dataset is available in the [*data*](https://github.com/abirmondal/de
 # Preprocessing
 
 We have used the following preprocessing steps:
-* Remove comments with stars ```*```, i.e. comments that are censored
-* Remove special words, such as HTML tags
+* Remove comments with stars ```*```, i.e. comments that are censored.
+* Remove special words, such as HTML tags.
 * Remove Links and Emojis using [normalizer](https://github.com/csebuetnlp/normalizer)
-* Remove single letter words
-* Translate English words to Bengali using Google Translator with the help of the library [translators](https://pypi.org/project/translators/)
-* Strip Comments to remove extra space
+* Remove single-letter words.
+* Translate English words to Bengali using Google Translator with the help of the library. [translators](https://pypi.org/project/translators/)
+* Strip Comments to remove extra space.
 
 # Dataset Division
 
@@ -40,7 +40,7 @@ The statistical models are:
 * [Support Vector Machine](https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html)
 * [Random Forest](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html)
 
-The deep learning model is made using [BanglaBERT](https://github.com/csebuetnlp/banglabert) and LSTM.
+The deep learning model uses [BanglaBERT](https://github.com/csebuetnlp/banglabert) and Long short-term memory(LSTM).
 
 # Results
 
@@ -53,6 +53,8 @@ The deep learning model is made using [BanglaBERT](https://github.com/csebuetnlp
 | Naive Bayes | 71.64 | 74.87 | 49.88 | 59.87 |
 
 We have achieved almost the best accuracy using **BanglaBERT + LSTM** model. As we wanted to focus on detecting abusive comments, we have focused on the *recall* and *f1-score* which is better than the other models.
+
+The project report is being uploaded to Github [*Project_Report*](https://github.com/roykingshuk/detect-abusive-comment/blob/main/Project_Report.pdf) to provide a comprehensive overview of the project's goals, objectives, and outcomes. This report will include a detailed description of the project's methodology, results, and conclusions. It will also include a discussion of the project's challenges and limitations.
 
 # Testing
 
